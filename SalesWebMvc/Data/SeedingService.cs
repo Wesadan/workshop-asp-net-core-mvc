@@ -19,8 +19,6 @@ namespace SalesWebMvc.Data
         {
             _context = context;
         }
-
-
         //esse metodo Seed vai ser chamado na Startup/Configure - pela Injeção de dependencia da aplicação
         public void Seed()
         {//verifica se tem dados no BD
@@ -30,7 +28,7 @@ namespace SalesWebMvc.Data
             {
                 return; //DB ja foi polupado
             }
-            //Inserindo dados na Tabela Departament (Popular banco de dados)
+            //Inserindo dados na Tabela Department (Popular banco de dados)
             Department d1 = new Department(1, "Computador");
             Department d2 = new Department(2, "Eletronicos");
             Department d3 = new Department(3, "Moda");

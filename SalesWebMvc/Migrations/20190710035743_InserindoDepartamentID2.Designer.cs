@@ -9,8 +9,8 @@ using SalesWebMvc.Models;
 namespace SalesWebMvc.Migrations
 {
     [DbContext(typeof(SalesWebMvcContext))]
-    [Migration("20190710035743_InserindoDepartamentID2")]
-    partial class InserindoDepartamentID2
+    [Migration("20190710035743_InserindoDepartmentID2")]
+    partial class InserindoDepartmentID2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

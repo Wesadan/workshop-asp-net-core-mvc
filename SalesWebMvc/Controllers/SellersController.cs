@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SalesWebMvc.Models;
 using SalesWebMvc.Services;
+using SalesWebMvc.Models.ViewModels;
 
 namespace SalesWebMvc.Controllers
 {
@@ -12,10 +13,12 @@ namespace SalesWebMvc.Controllers
     {
         //injeção de dependencia
         private readonly SellerService _sellerService;
+        private readonly DepartmentService _departmentService;
 
-        public SellersController(SellerService sellerService)
+        public SellersController(SellerService sellerService, DepartmentService departmentService)
         {
-             _sellerService = sellerService;
+            _departmentService = departmentService;
+            _sellerService = sellerService;
         }
         public IActionResult Index()
         {
@@ -26,7 +29,9 @@ namespace SalesWebMvc.Controllers
 
         public IActionResult Criar()
         {
-            return View();
+            var departments = _departmentService.FindAll();
+            var viewModel = new SellerFormViewModel { Departments = departments };
+            return View(viewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

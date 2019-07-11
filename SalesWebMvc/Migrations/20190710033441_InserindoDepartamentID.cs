@@ -2,7 +2,7 @@
 
 namespace SalesWebMvc.Migrations
 {
-    public partial class InserindoDepartamentID : Migration
+    public partial class InserindoDepartmentID : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
